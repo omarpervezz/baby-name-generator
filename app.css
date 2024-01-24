@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Poppins', sans-serif;
+	background: #0c1322;
+}
+
+.card {
+	--width: 458px;
+	--height: 589px;
+	background-color: #1f2937;
+	color: #f0e2f4;
+	width: var(--width);
+	height: var(--height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+.card-header {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 23px;
+}
+.baby-love-img-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 144px;
+  height: 144px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 26px;
+  animation: 0.9s ease-in-out 0s infinite alternate none running pulse;
+	border-bottom: 1px solid rgb(127, 252, 175);
+}
+.baby-love-img-container img {
+	width: 100px;
+  }
+  
+  @keyframes pulse {
+	0% {
+	  transform: scale(1);
+	}
+  
+	100% {
+	  transform: scale(0.9);
+	}
+  }
+@keyframes masked{
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -10000px 5000px;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translatey(-50px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translatey(0px);
+    }
+  }
+  
+  .card-header h2{
+    text-align:center;
+    background: -webkit-linear-gradient(
+        left,
+        #0ff 0%,
+        #97fba0 25%,
+        #97b1fb 50%,
+        #0ff 100%
+      )
+      repeat;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    animation: masked 25s linear infinite, fadeInDown 2.5s both 1;
+    -webkit-animation: masked 25s linear infinite, fadeInDown 2.5s both 1;
+    -moz-animation:masked 25s linear infinite, fadeInDown 2.5s both 1;
+    -o-animation: masked 25s linear infinite, fadeInDown 2.5s both 1;
+    font-size: 26px;
+  }
+.card-header span {
+	font-size: 84px;
+	user-select: none;
+}
+
+.card-body .select span {
+	display: inline-block;
+	margin-bottom: 16px;
+	font-weight: 500;
+}
+
+.card-body .select-gender {
+	display: flex;
+	gap: 7px;
+}
+
+.card-body .select-gender>div {
+	width: 128px;
+	height: 120px;
+	background-color: #4b5563;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+	user-select: none;
+}
+
+.card-body .select-gender>div input[type="radio"] {
+	opacity: 0;
+}
+
+.card-body .select-gender div.active {
+	background: linear-gradient(#4E65FF, #92EFFD);
+}
+
+.select-gender>div label span {
+	font-size: 13px;
+	font-weight: 400;
+	text-transform: uppercase;
+
+}
+
+.select-gender>div label {
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.select-gender>div .selected_value {
+	position: absolute;
+	bottom: 3px;
+	font-size: 16px;
+	font-weight: bold;
+	display: none;
+}
+
+.show {
+	display: block !important;
+}
+
+.generated-name {
+	background: linear-gradient(#4E65FF, #92EFFD);
+	height: 45px;
+	text-align: center;
+	margin: 15px 0 auto;
+	border-radius: 10px;
+	border: 1px solid #97abbd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.generated-name span {
+	font-size: 17px;
+}
+
+.loader {
+	border: 3px solid #4E65FF;
+	border-radius: 50%;
+	border-top: 3px solid #92EFFD;
+	width: 20px;
+	height: 20px;
+	-webkit-animation: spin 0.4s linear infinite;
+	/* Safari */
+	animation: spin 0.4s linear infinite;
+	display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.name-generator-button button {
+	border: 1px solid red;
+	;
+	width: 100%;
+	padding: 10px 0;
+	margin: 15px 0;
+	border: none;
+	outline: none;
+	color: #1f2937;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	border: 1px solid #473a63;
+	border-radius: 7px;
+	background: linear-gradient(#4E65FF, #92EFFD);
+}

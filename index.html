@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Meta tags for viewport, title, icon, description, author, and keywords -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Baby Names Generator</title>
+      <link rel="icon" type="image/x-icon" href="./baby-img.jpg">
+      <meta name="description" content="Baby name generator"/>
+      <meta name="author" content="Omar Pervez" />
+      <meta name="keywords" content="keywords" />
+      <!-- External CSS stylesheet -->
+      <link rel="stylesheet" href="./assets/css/app.css" type="text/css" />
+   </head>
+   <body>
+      <!-- Name Generator Wrapper -->
+      <div class="wrapper">
+         <!-- Start card -->
+         <div class="card">
+            <!-- Card container -->
+            <div class="card-container">
+               <div class="card-header">
+                  <!-- Baby love image and generator title -->
+                  <div class="baby-love-img-container animated-image"><img src="https://sohrabzia.github.io/namegeneratorpk/img/babyNameLogo.webp" alt="" class="animated-image"></div>
+                  <h2>Baby name generator</h2>
+               </div>
+               <div class="card-body">
+                  <!-- Gender selection -->
+                  <div class="select"><span>Select Gender:</span></div>
+                  <div class="select-gender">
+                     <!-- Neutral gender option -->
+                     <div id="box-1" class="gender-box">
+                        <label for="netrual"><span>Neutral</span> <br>👨‍👦</label>
+                        <input type="radio" name="gender" value="neutral" id="netrual">
+                        <span class="selected_value">👍</span>
+                     </div>
+                     <!-- Baby boy gender option -->
+                     <div id="box-2" class="gender-box box-2">
+                        <label for="baby-boy"><span>Baby boy</span> <br>👦🏻</label>
+                        <input type="radio" name="gender" value="boy" id="baby-boy">
+                        <span class="selected_value">👍</span>
+                     </div>
+                     <!-- Baby girl gender option -->
+                     <div id="box-3" class="gender-box box-3">
+                        <label for="baby-girl"><span>Baby girl</span> <br>👼🏻</label>
+                        <input type="radio" name="gender" value="girl" id="baby-girl">
+                        <span class="selected_value">👍</span>
+                     </div>
+                  </div>
+                  <!-- Generated name display and loader -->
+                  <div class="generated-name">
+                     <div class="loader" id="loader"></div>
+                     <div id="generated-list">Name will appear here</div>
+                  </div>
+                  <!-- Name generator button -->
+                  <div class="name-generator-button">
+                     <button type="button" id="generator">Generate</button>
+                  </div>
+               </div>
+               <div class="card-footer"></div>
+            </div>
+            <!-- Card container -->
+         </div>
+         <!-- End card -->
+      </div>
+      <!-- Name Generator Wrapper -->
+      <!-- JavaScript file -->
+      <script src="./assets/js/app.js"></script>
+   </body>
+</html>

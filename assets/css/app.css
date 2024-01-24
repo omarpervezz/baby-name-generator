@@ -1,0 +1,259 @@
+/* Importing Google Fonts Poppins with two weights (400 and 500) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/* Resetting some default styles for all elements */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Resetting margin and padding for heading elements */
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+/* Styling the body element */
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Poppins', sans-serif; /* Setting the default font */
+	background: #0c1322; /* Background color for the body */
+}
+
+/* Styling the card container */
+.card {
+	--width: 458px; /* Custom property for width */
+	--height: 589px; /* Custom property for height */
+	background-color: #1f2937; /* Background color for the card */
+	color: #f0e2f4; /* Text color for the card */
+	width: var(--width);
+	height: var(--height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+/* Styling the header of the card */
+.card-header {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 23px;
+}
+
+/* Styling the image container with animation */
+.baby-love-img-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	width: 144px;
+	height: 144px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 26px;
+	animation: 0.9s ease-in-out 0s infinite alternate none running pulse;
+	border-bottom: 1px solid rgb(127, 252, 175);
+}
+
+/* Styling the image inside the container */
+.baby-love-img-container img {
+	width: 100px;
+}
+
+/* Keyframe animation for the pulse effect */
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.9);
+	}
+}
+
+/* Keyframe animation for background mask and fade in effect */
+@keyframes masked {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: -10000px 5000px;
+	}
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/* Styling the header text with gradient and animation */
+.card-header h2 {
+	text-align: center;
+	background: -webkit-linear-gradient(
+		left,
+		#0ff 0%,
+		#97fba0 25%,
+		#97b1fb 50%,
+		#0ff 100%
+	) repeat;
+	-webkit-background-clip: text;
+	-ms-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-ms-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	animation: masked 25s linear infinite, fadeInDown 2.5s both 1;
+	-webkit-animation: masked 25s linear infinite, fadeInDown 2.5s both 1;
+	-moz-animation: masked 25s linear infinite, fadeInDown 2.5s both 1;
+	-o-animation: masked 25s linear infinite, fadeInDown 2.5s both 1;
+	font-size: 26px;
+}
+
+/* Styling the span inside the header */
+.card-header span {
+	font-size: 84px;
+	user-select: none;
+}
+
+/* Styling the body of the card */
+.card-body .select span {
+	display: inline-block;
+	margin-bottom: 16px;
+	font-weight: 500;
+}
+
+/* Styling the gender selection */
+.card-body .select-gender {
+	display: flex;
+	gap: 7px;
+}
+
+.card-body .select-gender > div {
+	width: 128px;
+	height: 120px;
+	background-color: #4b5563;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+	user-select: none;
+}
+
+.card-body .select-gender > div input[type="radio"] {
+	opacity: 0;
+}
+
+/* Styling the active state of the gender selection */
+.card-body .select-gender div.active {
+	background: linear-gradient(#4E65FF, #92EFFD);
+}
+
+.card-body .select-gender > div label span {
+	font-size: 13px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.card-body .select-gender > div label {
+	font-size: 28px;
+	cursor: pointer;
+}
+
+.card-body .select-gender > div .selected_value {
+	position: absolute;
+	bottom: 3px;
+	font-size: 16px;
+	font-weight: bold;
+	display: none;
+}
+
+.show {
+	display: block !important;
+}
+
+/* Styling the generated name container */
+.generated-name {
+	background: #1f2937;
+	height: 45px;
+	text-align: center;
+	margin: 15px 0 auto;
+	border-radius: 10px;
+	border: 1px solid #7b9097;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* Styling the text inside the generated name container */
+.generated-name span {
+	font-size: 17px;
+}
+
+/* Styling the loader animation */
+.loader {
+	border: 3px solid #4E65FF;
+	border-radius: 50%;
+	border-top: 3px solid #92EFFD;
+	width: 20px;
+	height: 20px;
+	-webkit-animation: spin 0.4s linear infinite;
+	animation: spin 0.4s linear infinite;
+	display: none;
+}
+
+/* Keyframe animation for the loader spin effect */
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Styling the button in the name generator */
+.name-generator-button button {
+	width: 100%;
+	padding: 10px 0;
+	margin: 15px 0;
+	border: none;
+	outline: none;
+	color: #1f2937;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	border: 1px solid #473a63;
+	border-radius: 7px;
+	background: linear-gradient(#4E65FF, #92EFFD);
+}
