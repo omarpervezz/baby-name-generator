@@ -27,12 +27,10 @@ body {
 
 /* Styling the card container */
 .card {
-	--width: 458px; /* Custom property for width */
-	--height: 589px; /* Custom property for height */
 	background-color: #1f2937; /* Background color for the card */
 	color: #f0e2f4; /* Text color for the card */
-	width: var(--width);
-	height: var(--height);
+	width: 458px;
+	height: 589px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
