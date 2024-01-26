@@ -10,15 +10,10 @@
       <meta name="keywords" content="keywords" />
       <!-- External CSS stylesheet -->
       <link rel="stylesheet" href="./assets/css/app.css" type="text/css" />
-      <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <!-- Include gif.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
    </head>
    <body>
-      <!-- Button to trigger recording -->
-    <button onclick="startRecording()">Start Recording</button>
       <!-- Name Generator Wrapper -->
-      <div id="wrapper" class="wrapper">
+      <div class="wrapper">
          <!-- Start card -->
          <div class="card">
             <!-- Card container -->
@@ -33,19 +28,19 @@
                   <div class="select"><span>Select Gender:</span></div>
                   <div class="select-gender">
                      <!-- Neutral gender option -->
-                     <div id="box-1" class="gender-box">
+                     <div id="genderNetrualType" class="gender-box">
                         <label for="netrual"><span>Neutral</span> <br>👨‍👦</label>
                         <input type="radio" name="gender" value="neutral" id="netrual">
                         <span class="selected_value">👍</span>
                      </div>
                      <!-- Baby boy gender option -->
-                     <div id="box-2" class="gender-box box-2">
+                     <div id="genderBoyType" class="gender-box box-2">
                         <label for="baby-boy"><span>Baby boy</span> <br>👦🏻</label>
                         <input type="radio" name="gender" value="boy" id="baby-boy">
                         <span class="selected_value">👍</span>
                      </div>
                      <!-- Baby girl gender option -->
-                     <div id="box-3" class="gender-box box-3">
+                     <div id="genderTypeGirl" class="gender-box box-3">
                         <label for="baby-girl"><span>Baby girl</span> <br>👼🏻</label>
                         <input type="radio" name="gender" value="girl" id="baby-girl">
                         <span class="selected_value">👍</span>
@@ -70,39 +65,5 @@
       <!-- Name Generator Wrapper -->
       <!-- JavaScript file -->
       <script src="./assets/js/app.js"></script>
-
-
-
-    <!-- Script to handle recording -->
-<script type="text/javascript">
-   function startRecording() {
-       // Capture the content of the specified element
-       html2canvas(document.getElementById('wrapper')).then(canvas => {
-           // Create a gif.js instance
-           const gif = new GIF();
-
-           // Add the captured canvas as a frame to the gif
-           gif.addFrame(canvas, { delay: 200 });
-
-           // You can add more frames for animations if needed
-
-           // Render the gif
-           gif.on('finished', function (blob) {
-               const url = URL.createObjectURL(blob);
-               const a = document.createElement('a');
-               a.href = url;
-               a.download = 'recorded.gif';
-               document.body.appendChild(a);
-               a.click();
-               document.body.removeChild(a);
-               URL.revokeObjectURL(url);
-           });
-
-           // Render the gif
-           gif.render();
-       });
-   }
-</script>
-
    </body>
 </html>

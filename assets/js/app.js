@@ -12,24 +12,24 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   // Array of element IDs for boxes
-  const idElement = ['box-1', 'box-2', 'box-3'];
+  const idElement = ['genderNetrualType', 'genderBoyType', 'genderTypeGirl'];
 
   // Map containing the selected DOM elements
   const elementS = selectId(idElement);
 
-  // Function to handle box click events
-  function handleBoxClick(clickedBoxId) {
+  // Function to genderTypeSelect click events
+  function genderTypeSelect(clickedBoxId) {
     idElement.forEach(id => {
       const currentElement = elementS.get(id);
 
       if (id !== clickedBoxId && currentElement.classList.contains('active')) {
-        // Deactivate other boxes
+        // Deactivate other clicked gender type
         currentElement.classList.remove('active');
         currentElement.querySelector('.selected_value').classList.remove('show');
       }
     });
 
-    // Activate the clicked box
+    // Activate the clicked gender type
     const clickedBox = elementS.get(clickedBoxId);
     clickedBox.classList.add('active');
     clickedBox.querySelector('input').click();
@@ -37,9 +37,9 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   // Event listeners for box clicks
-  elementS.get('box-1').addEventListener('click', () => handleBoxClick('box-1'));
-  elementS.get('box-2').addEventListener('click', () => handleBoxClick('box-2'));
-  elementS.get('box-3').addEventListener('click', () => handleBoxClick('box-3'));
+  elementS.get('genderNetrualType').addEventListener('click', () => genderTypeSelect('genderNetrualType'));
+  elementS.get('genderBoyType').addEventListener('click', () => genderTypeSelect('genderBoyType'));
+  elementS.get('genderTypeGirl').addEventListener('click', () => genderTypeSelect('genderTypeGirl'));
 
   // Define a named function for the event handler
   function handleClick() {
@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', function () {
     if (selectedGender) {
       upDateData(selectedGender, inserElement, loader);
     } else {
-      alert('Select Gender type');
+      alert('Select gender type');
     }
   }
 
